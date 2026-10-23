@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"from pathlib import Path; import runpy; p = next(d / '.agents/hooks/check-reuse.py' for d in (Path.cwd(), *Path.cwd().parents) if (d / '.agents/hooks/check-reuse.py').is_file()); runpy.run_path(str(p), run_name='__main__')\"",
+            "timeout": 90,
+            "statusMessage": "Checking REUSE licensing"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"from pathlib import Path; import runpy; p = next(d / '.agents/hooks/check-reuse.py' for d in (Path.cwd(), *Path.cwd().parents) if (d / '.agents/hooks/check-reuse.py').is_file()); runpy.run_path(str(p), run_name='__main__')\"",
+            "timeout": 90,
+            "statusMessage": "Checking REUSE licensing"
+          }
+        ]
+      }
+    ]
+  }
+}

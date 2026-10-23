@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Pier Luigi Fiorini
+# SPDX-License-Identifier: MIT
+
+build*/
+__pycache__/
+*.py[cod]
